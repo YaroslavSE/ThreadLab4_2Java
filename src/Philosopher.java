@@ -1,6 +1,6 @@
 public class Philosopher extends Thread {
     private final Waiter waiter;
-    private final int leftFork, rightFork;
+
     private final int id;
 
     public Philosopher(int id, Waiter waiter) {
@@ -8,14 +8,8 @@ public class Philosopher extends Thread {
         this.id = id;
         this.waiter = waiter;
 
-        if(id == 4){
-            rightFork = (id + 1) % 5;
-            leftFork = id;
-        }
-        else{
-            rightFork = id;
-            leftFork = (id + 1) % 5;
-        }
+
+
         start();
     }
 
